@@ -32,10 +32,16 @@ const Navigation = ({ activeTab, setActiveTab, onLogout }) => {
       </div>
 
       <div ref={menuRef} className={`slide-out-menu ${menuOpen ? 'open' : ''}`}>
-        <div onClick={() => { setActiveTab('form'); setMenuOpen(false); }}>Pitch Tracking Form</div>
-        <div onClick={() => { setActiveTab('session'); setMenuOpen(false); }}>Current Session</div>
-        <div onClick={() => { setActiveTab('logs'); setMenuOpen(false); }}>Pitch Logs</div>
-        <div onClick={() => { onLogout(); setMenuOpen(false); }} className="logout-menu">Logout</div>
+        <div className="menu-content">
+          <div className="menu-items">
+            <div onClick={() => { setActiveTab('form'); setMenuOpen(false); }}>Pitch Tracking Form</div>
+            <div onClick={() => { setActiveTab('session'); setMenuOpen(false); }}>Current Session</div>
+            <div onClick={() => { setActiveTab('logs'); setMenuOpen(false); }}>Pitch Logs</div>
+          </div>
+          <div onClick={() => { onLogout(); setMenuOpen(false); }} className="logout-menu">
+            Logout
+          </div>
+        </div>
       </div>
 
       <div className="tab-container">
