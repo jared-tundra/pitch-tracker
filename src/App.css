@@ -220,3 +220,119 @@
   font-size: 20px;
   cursor: pointer;
 }
+
+/* --- Hamburger Menu --- */
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 28px;
+  height: 22px;
+  cursor: pointer;
+  margin-left: 12px;
+}
+
+.menu-icon .bar {
+  height: 3px;
+  width: 100%;
+  background-color: #333;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* --- Dropdown Menu (mobile menu) --- */
+.dropdown-menu {
+  position: absolute;
+  top: 60px;
+  left: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  padding: 12px 0;
+  z-index: 999;
+  width: 200px;
+}
+
+.dropdown-menu div {
+  padding: 12px 16px;
+  font-size: 16px;
+  color: #333;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-menu div:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu div:hover {
+  background-color: #f9f9f9;
+}
+
+/* --- Bottom Tab Navigation --- */
+.tab-container {
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #f8f8f8;
+  border-top: 1px solid #ddd;
+  padding: 10px 0;
+  z-index: 100;
+}
+
+.active-tab, .inactive-tab {
+  flex: 1;
+  text-align: center;
+  font-size: 14px;
+  padding: 8px 0;
+  cursor: pointer;
+}
+
+.active-tab {
+  font-weight: bold;
+  color: #2196f3;
+  border-top: 2px solid #2196f3;
+}
+
+.inactive-tab {
+  color: #777;
+}
+
+/* Slide-out menu styles */
+.slide-out-menu {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  height: 100vh;
+  width: 220px;
+  background-color: white;
+  box-shadow: 2px 0 6px rgba(0,0,0,0.15);
+  padding-top: 60px;
+  transition: left 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
+}
+
+.slide-out-menu.open {
+  left: 0;
+}
+
+.slide-out-menu div {
+  padding: 16px;
+  font-size: 16px;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+}
+
+.logout-menu {
+  margin-top: auto;
+  color: red;
+  font-weight: bold;
+  border-top: 1px solid #eee;
+}

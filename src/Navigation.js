@@ -1,9 +1,24 @@
 // src/Navigation.js
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 
 const Navigation = ({ activeTab, setActiveTab, onLogout }) => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setMenuOpen(false);
+      }
+    };
+    if (menuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [menuOpen]);
 
   return (
     <>
@@ -14,16 +29,14 @@ const Navigation = ({ activeTab, setActiveTab, onLogout }) => {
           <div className="bar"></div>
         </div>
         <h1>Pitch Tracker</h1>
-        <button onClick={onLogout} className="logout-button">Logout</button>
       </div>
 
-      {menuOpen && (
-        <div className="dropdown-menu">
-          <div onClick={() => { setActiveTab('form'); setMenuOpen(false); }}>Pitch Tracking Form</div>
-          <div onClick={() => { setActiveTab('session'); setMenuOpen(false); }}>Current Session</div>
-          <div onClick={() => { setActiveTab('logs'); setMenuOpen(false); }}>Pitch Logs</div>
-        </div>
-      )}
+      <div ref={menuRef} className={`slide-out-menu ${menuOpen ? 'open' : ''}`}>
+        <div onClick={() => { setActiveTab('form'); setMenuOpen(false); }}>Pitch Tracking Form</div>
+        <div onClick={() => { setActiveTab('session'); setMenuOpen(false); }}>Current Session</div>
+        <div onClick={() => { setActiveTab('logs'); setMenuOpen(false); }}>Pitch Logs</div>
+        <div onClick={() => { onLogout(); setMenuOpen(false); }} className="logout-menu">Logout</div>
+      </div>
 
       <div className="tab-container">
         <div
