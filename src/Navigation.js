@@ -22,21 +22,21 @@ const Navigation = ({ activeTab, setActiveTab, onLogout }) => {
 
   return (
     <>
-      <div className="header">
+      <div className="header themed-header">
         <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
-          <div className="bar"></div>
-          <div className="bar"></div>
-          <div className="bar"></div>
+          <div className="bar themed-bar"></div>
+          <div className="bar themed-bar"></div>
+          <div className="bar themed-bar"></div>
         </div>
-        <h1>Pitch Tracker</h1>
+        <h1 className="themed-title">Pitch Tracker</h1>
       </div>
 
-      <div ref={menuRef} className={`slide-out-menu ${menuOpen ? 'open' : ''}`}>
+      <div ref={menuRef} className={`slide-out-menu ${menuOpen ? 'open' : ''} themed-menu`}>
         <div className="menu-content">
           <div className="menu-items">
-            <div onClick={() => { setActiveTab('form'); setMenuOpen(false); }}>Pitch Tracking Form</div>
-            <div onClick={() => { setActiveTab('session'); setMenuOpen(false); }}>Current Session</div>
-            <div onClick={() => { setActiveTab('logs'); setMenuOpen(false); }}>Pitch Logs</div>
+            <div className="menu-item" onClick={() => { setActiveTab('form'); setMenuOpen(false); }}>Pitch Tracking Form</div>
+            <div className="menu-item" onClick={() => { setActiveTab('session'); setMenuOpen(false); }}>Current Session</div>
+            <div className="menu-item" onClick={() => { setActiveTab('logs'); setMenuOpen(false); }}>Pitch Logs</div>
           </div>
           <div onClick={() => { onLogout(); setMenuOpen(false); }} className="logout-menu">
             Logout
@@ -44,24 +44,24 @@ const Navigation = ({ activeTab, setActiveTab, onLogout }) => {
         </div>
       </div>
 
-      <div className="tab-container">
+      <div className="tab-container themed-tab-container">
         <div
-          className={activeTab === 'form' ? 'active-tab' : 'inactive-tab'}
+          className={activeTab === 'form' ? 'active-tab themed-active-tab' : 'inactive-tab themed-inactive-tab'}
           onClick={() => setActiveTab('form')}
         >
-          Pitch Tracking Form
+          Pitch Form
         </div>
         <div
-          className={activeTab === 'session' ? 'active-tab' : 'inactive-tab'}
+          className={activeTab === 'session' ? 'active-tab themed-active-tab' : 'inactive-tab themed-inactive-tab'}
           onClick={() => setActiveTab('session')}
         >
-          Current Session
+          Session
         </div>
         <div
-          className={activeTab === 'logs' ? 'active-tab' : 'inactive-tab'}
+          className={activeTab === 'logs' ? 'active-tab themed-active-tab' : 'inactive-tab themed-inactive-tab'}
           onClick={() => setActiveTab('logs')}
         >
-          Pitch Logs
+          Logs
         </div>
       </div>
     </>
