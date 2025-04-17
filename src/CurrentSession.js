@@ -128,8 +128,9 @@ const CurrentSession = ({ setActiveTab }) => {
           <p><strong>Date:</strong> {sessionData.date}</p>
           <p><strong>Player:</strong> {sessionData.player}</p>
           <p><strong>Notes:</strong> {sessionData.notes}</p>
-          <p><strong>Pitch Count:</strong> {sessionData.pitchCount}</p>
 
+
+          <div className="pitch-count-display">{sessionData.pitchCount}</div>
           <div className="pitch-buttons-row">
             <button className="pitch-button" onClick={() => updatePitchCount(-1)}>
               <img src="/assets/minus.svg" alt="-1" className="pitch-icon" />
