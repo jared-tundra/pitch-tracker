@@ -203,8 +203,8 @@
 .action-buttons-row {
   display: flex;
   justify-content: center;
-  gap: 80px;
-  margin-top: 60px;
+  gap: 25px;
+  margin-top: 100px;
   margin-bottom: 60px;
 }
 
@@ -213,7 +213,6 @@
   background-position: center;
   background-repeat: no-repeat;
   border: none;
-
   font-size: 20px;
   font-weight: bold;
   text-align: center;
@@ -253,8 +252,8 @@
 }
 
 .pitch-icon {
-  width: 200px;
-  height: 200px;
+  width: 125px;
+  height: 125px;
   object-fit: contain;
 }
 
