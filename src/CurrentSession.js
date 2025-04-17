@@ -1,7 +1,18 @@
 // src/CurrentSession.js
 import React, { useState, useEffect } from 'react';
 import { db } from './firebase';
-import { collection, query, orderBy, limit, getDocs, updateDoc, doc, addDoc, where, deleteDoc } from 'firebase/firestore';
+import {
+  collection,
+  query,
+  orderBy,
+  limit,
+  getDocs,
+  updateDoc,
+  doc,
+  addDoc,
+  where,
+  deleteDoc
+} from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 
 const CurrentSession = ({ setActiveTab }) => {
@@ -108,20 +119,25 @@ const CurrentSession = ({ setActiveTab }) => {
   }
 
   return (
-    <div>
-      <h2>Current Session</h2>
+    <div className="session-container">
+      <h2 className="form-title">Current Session</h2>
       {sessionData ? (
-        <div>
+        <div className="session-info">
           <p><strong>Date:</strong> {sessionData.date}</p>
           <p><strong>Player:</strong> {sessionData.player}</p>
           <p><strong>Notes:</strong> {sessionData.notes}</p>
-          <p><strong>Pitch Count:</strong> {sessionData.pitchCount ?? 0}</p>
+          <p><strong>Pitch Count:</strong> {sessionData.pitchCount}</p>
 
-          <button onClick={() => updatePitchCount(1)}>Add 1 Pitch</button>
-          <button onClick={() => updatePitchCount(-1)}>Subtract 1 Pitch</button>
+          <div className="pitch-buttons-row">
+            <button className="pitch-button add" onClick={() => updatePitchCount(1)}>+1</button>
+            <button className="pitch-button subtract" onClick={() => updatePitchCount(-1)}>-1</button>
+          </div>
 
-          <button onClick={() => setShowSubmitConfirmation(true)}>Submit Session</button>
-          <button onClick={() => setShowCancelConfirmation(true)}>Cancel Session</button>
+
+          <div className="action-buttons-row">
+            <button className="session-button" onClick={() => setShowSubmitConfirmation(true)}>Submit</button>
+            <button className="session-button cancel" onClick={() => setShowCancelConfirmation(true)}>Cancel</button>
+          </div>
 
           {showSubmitConfirmation && (
             <div className="confirmation-modal">

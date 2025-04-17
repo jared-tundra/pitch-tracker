@@ -125,6 +125,139 @@
   color: #ffffff;
 }
 
-.menu-icon.hidden {
-  display: none;
+/* ========== FORM UI ========== */
+.form-container {
+  padding: 20px;
+}
+
+.form-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: var(--theme-dark);
+}
+
+.pitch-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.form-submit-button {
+  background-color: var(--theme-accent);
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.form-submit-button:hover {
+  background-color: #e89615;
+}
+
+.form-error {
+  color: red;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+/* ========== CURRENT SESSION UI ========== */
+.session-container {
+  padding: 20px;
+  padding-bottom: 100px;
+}
+
+.session-info p {
+  margin: 10px 0;
+  font-size: 20px;
+  color: #333;
+  font-weight: 600;
+}
+
+.pitch-buttons-row,
+.action-buttons-row {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.pitch-button {
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: none;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 70px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.pitch-button.add {
+  background-image: url('/assets/+1.png');
+  color: transparent;
+}
+
+.pitch-button.subtract {
+  background-image: url('/assets/-1.png');
+  color: transparent;
+}
+
+.pitch-button:hover {
+  transform: scale(1.05);
+}
+
+.session-button {
+  flex: 1;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.session-button:not(.cancel) {
+  background-color: var(--theme-dark);
+  color: white;
+  border: none;
+}
+
+.session-button.cancel {
+  background-color: white;
+  color: var(--theme-dark);
+  border: 2px solid var(--theme-dark);
+}
+
+.session-button:hover {
+  opacity: 0.9;
 }
