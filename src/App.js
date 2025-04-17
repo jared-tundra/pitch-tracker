@@ -9,6 +9,7 @@ import AuthScreen from './AuthScreen';
 import Navigation from './Navigation';
 import './App.css';
 
+
 const App = () => {
   const [activeTab, setActiveTab] = useState('form');
   const [user, setUser] = useState(null);

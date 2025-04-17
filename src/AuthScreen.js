@@ -1,7 +1,8 @@
 // src/AuthScreen.js
 import React, { useState, useEffect, useRef } from 'react';
 import { loginUser, registerUser, resetPassword } from './authService';
-import './App.css';
+//import './App.css';
+import './Auth.css';
 
 const AuthScreen = () => {
   const [email, setEmail] = useState('');
