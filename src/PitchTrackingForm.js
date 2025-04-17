@@ -13,10 +13,7 @@ import { getAuth } from 'firebase/auth';
 const PitchTrackingForm = ({ setActiveTab }) => {
   const [players, setPlayers] = useState([]);
   const [selectedPlayer, setSelectedPlayer] = useState('');
-  const [date, setDate] = useState(() => {
-    const today = new Date();
-    return today.toISOString().split('T')[0]; // Format: YYYY-MM-DD
-  });
+  const [date, setDate] = useState(() => new Date().toISOString().substr(0, 10));
   const [notes, setNotes] = useState('');
   const [error, setError] = useState('');
 
@@ -70,11 +67,12 @@ const PitchTrackingForm = ({ setActiveTab }) => {
         player: selectedPlayer,
         notes,
         createdAt: Timestamp.now(),
+        pitchCount: 0,
         submitted: false,
         submittedBy: user.email,
       });
 
-      setDate(new Date().toISOString().split('T')[0]); // reset to today's date
+      setDate(new Date().toISOString().substr(0, 10));
       setSelectedPlayer('');
       setNotes('');
       setError('');
@@ -87,13 +85,14 @@ const PitchTrackingForm = ({ setActiveTab }) => {
   };
 
   return (
-    <div>
-      <h2>Start Pitch Tracking Session</h2>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Date: </label>
+    <div className="form-container">
+      <h2 className="form-title">Start Pitch Tracking Session</h2>
+      {error && <p className="form-error">{error}</p>}
+      <form onSubmit={handleSubmit} className="pitch-form">
+        <div className="form-group">
+          <label htmlFor="date">Date</label>
           <input
+            id="date"
             type="date"
             value={date}
             onChange={(e) => setDate(e.target.value)}
@@ -101,9 +100,10 @@ const PitchTrackingForm = ({ setActiveTab }) => {
           />
         </div>
 
-        <div>
-          <label>Player: </label>
+        <div className="form-group">
+          <label htmlFor="player">Player</label>
           <select
+            id="player"
             value={selectedPlayer}
             onChange={(e) => setSelectedPlayer(e.target.value)}
             required
@@ -117,16 +117,19 @@ const PitchTrackingForm = ({ setActiveTab }) => {
           </select>
         </div>
 
-        <div>
-          <label>Notes: </label>
+        <div className="form-group">
+          <label htmlFor="notes">Notes</label>
           <textarea
+            id="notes"
+            rows="4"
             value={notes}
             onChange={(e) => setNotes(e.target.value)}
+            placeholder="Optional notes..."
           />
         </div>
 
-        <div>
-          <button type="submit">Start Session</button>
+        <div className="form-group">
+          <button type="submit" className="form-submit-button">Start Session</button>
         </div>
       </form>
     </div>

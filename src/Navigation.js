@@ -23,7 +23,7 @@ const Navigation = ({ activeTab, setActiveTab, onLogout }) => {
   return (
     <>
       <div className="header themed-header">
-        <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
+      <div className={`menu-icon ${menuOpen ? 'hidden' : ''}`} onClick={() => setMenuOpen(true)}>
           <div className="bar themed-bar"></div>
           <div className="bar themed-bar"></div>
           <div className="bar themed-bar"></div>

@@ -1,310 +1,52 @@
-/* App.css */
-
-/* Remove default App styles if you don't need them */
-.App {
-  /* Reset or customize based on your app's needs */
-  margin: 0;
-  padding: 20px;
+/* ========== THEME COLORS ========== */
+:root {
+  --theme-dark: #263525;
+  --theme-accent: #f4a52c;
 }
 
-/* Your custom styles */
-.confirmation-modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.confirmation-modal button {
-  margin: 10px;
-  padding: 10px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.confirmation-modal button:hover {
-  background-color: #45a049;
-}
-
-.app-container {
+/* ========== HEADER ========== */
+.themed-header {
+  background-color: var(--theme-dark);
+  color: #ffffff;
+  padding: 16px;
   display: flex;
-  flex-direction: column;
-  height: 100vh;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 10px 16px;
-  background-color: #4CAF50;
-  color: white;
-}
-
-.logout-button {
-  background-color: #fff;
-  border: none;
-  padding: 6px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.content-area {
-  flex: 1;
-  overflow-y: auto;
-}
-
-.tab-container {
-  display: flex;
-  justify-content: space-evenly;
-  background-color: #f1f1f1;
-  padding: 10px 0;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  border-top: 1px solid #ddd;
-}
-
-.active-tab {
-  font-weight: bold;
-  padding: 10px;
-  border-bottom: 2px solid #4CAF50;
-  cursor: pointer;
-}
-
-.inactive-tab {
-  padding: 10px;
-  cursor: pointer;
-}
-
-.auth-container {
-  display: flex;
-  flex-direction: column;
-  max-width: 300px;
-  margin: auto;
-  padding-top: 100px;
-  gap: 10px;
-}
-
-.auth-input {
-  padding: 8px;
-  font-size: 16px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-}
-
-.auth-button {
-  padding: 10px;
-  background-color: #4CAF50;
-  color: white;
-  font-size: 16px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-/* Error Modal Styling */
-.error-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.error-modal-content {
-  background-color: white;
-  padding: 20px;
-  border-radius: 5px;
-  width: 300px;
-  text-align: center;
   position: relative;
 }
 
-.error-modal-close {
-  position: absolute;
-  top: 5px;
-  right: 10px;
+.themed-title {
+  margin: 0 auto;
   font-size: 20px;
-  cursor: pointer;
+  font-weight: bold;
+  color: var(--theme-accent);
 }
 
-/* src/App.css */
-.reset-password-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
-}
-
-.reset-password-modal-content {
-  background-color: white;
-  padding: 20px;
-  border-radius: 5px;
-  width: 300px;
-  text-align: center;
-}
-
-.reset-password-modal-close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.reset-password-link {
-  margin-top: 10px;
-  text-align: center;
-}
-
-.auth-input {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-}
-
-.auth-button {
-  width: 100%;
-  padding: 10px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-.auth-button.secondary {
-  background-color: #f44336;
-}
-
-.error-modal, .success-modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  padding: 20px;
-  border-radius: 5px;
-  z-index: 1001;
-}
-
-.error-modal-content, .success-modal-content {
-  text-align: center;
-}
-
-.error-modal-close, .success-modal-close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-/* --- Hamburger Menu --- */
+/* ========== HAMBURGER MENU ICON ========== */
 .menu-icon {
   position: absolute;
   left: 16px;
-  top: 20px;
+  top: 18px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 24px;
-  height: 18px;
+  height: 20px;
   cursor: pointer;
   z-index: 1001;
 }
 
-.menu-icon .bar {
+.bar {
   height: 3px;
   width: 100%;
-  background-color: #FFFFF;
+  background-color: #333;
   border-radius: 2px;
-  transition: all 0.3s ease;
 }
 
-/* --- Dropdown Menu (mobile menu) --- */
-.dropdown-menu {
-  position: absolute;
-  top: 60px;
-  left: 10px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-  padding: 12px 0;
-  z-index: 999;
-  width: 200px;
+.themed-bar {
+  background-color: var(--theme-accent);
 }
 
-.dropdown-menu div {
-  padding: 12px 16px;
-  font-size: 16px;
-  color: #333;
-  border-bottom: 1px solid #f0f0f0;
-  transition: background-color 0.2s ease;
-}
-
-.dropdown-menu div:last-child {
-  border-bottom: none;
-}
-
-.dropdown-menu div:hover {
-  background-color: #f9f9f9;
-}
-
-/* --- Bottom Tab Navigation --- */
-.tab-container {
-  display: flex;
-  justify-content: space-around;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: #f8f8f8;
-  border-top: 1px solid #ddd;
-  padding: 10px 0;
-  z-index: 100;
-}
-
-.active-tab, .inactive-tab {
-  flex: 1;
-  text-align: center;
-  font-size: 14px;
-  padding: 8px 0;
-  cursor: pointer;
-}
-
-.active-tab {
-  font-weight: bold;
-  color: #2196f3;
-  border-top: 2px solid #2196f3;
-}
-
-.inactive-tab {
-  color: #777;
-}
-
-/* Slide-out menu styles */
+/* ========== SLIDE-OUT MENU ========== */
 .slide-out-menu {
   position: fixed;
   top: 0;
@@ -335,48 +77,8 @@
   cursor: pointer;
 }
 
-.logout-menu {
-  padding: 16px;
-  font-size: 16px;
-  color: red;
-  font-weight: bold;
-  border-top: 1px solid #f0f0f0;
-  cursor: pointer;
-}
-
-/* ======= THEME STYLES ======= */
-.themed-header {
-  background-color: #263525;
-  color: #ffffff;
-  padding: 16px;
-  display: flex;
-  align-items: center;
-}
-
-.themed-title {
-  margin: 0 auto;
-  font-size: 20px;
-  font-weight: bold;
-  color: #f4a52c;
-}
-
-.themed-bar {
-  background-color: #f4a52c;
-  height: 4px;
-  margin: 3px 0;
-  width: 25px;
-  border-radius: 2px;
-}
-
-/* Slide-Out Menu Theme */
-.themed-menu {
-  background-color: #ffffff;
-  color: #263525;
-  font-weight: 500;
-}
-
 .menu-item:hover {
-  background-color: #f4a52c;
+  background-color: var(--theme-accent);
   color: #fff;
 }
 
@@ -389,18 +91,40 @@
   cursor: pointer;
 }
 
-/* Tab Bar Theme */
+/* ========== TAB BAR ========== */
+.tab-container {
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
 .themed-tab-container {
-  background-color: #263525;
+  background-color: var(--theme-dark);
   border-top: 2px solid #ddd;
 }
 
+.active-tab,
+.inactive-tab {
+  flex: 1;
+  text-align: center;
+  padding: 12px;
+  font-size: 14px;
+}
+
 .themed-active-tab {
-  background-color: #f4a52c;
-  color: #263525;
+  background-color: var(--theme-accent);
+  color: var(--theme-dark);
   font-weight: bold;
 }
 
 .themed-inactive-tab {
   color: #ffffff;
+}
+
+.menu-icon.hidden {
+  display: none;
 }
