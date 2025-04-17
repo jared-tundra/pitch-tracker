@@ -14,8 +14,8 @@ import {
   deleteDoc
 } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
-import plusOne from './assets/+1.svg';
-import minusOne from './assets/-1.svg';
+import plusOne from './assets/plus.svg';
+import minusOne from './assets/minus.svg';
 
 
 const CurrentSession = ({ setActiveTab }) => {
