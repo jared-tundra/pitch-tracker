@@ -14,8 +14,7 @@ import {
   deleteDoc
 } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
-import plusOne from './assets/plus.svg';
-import minusOne from './assets/minus.svg';
+
 
 
 const CurrentSession = ({ setActiveTab }) => {
@@ -133,12 +132,13 @@ const CurrentSession = ({ setActiveTab }) => {
 
           <div className="pitch-buttons-row">
             <button className="pitch-button" onClick={() => updatePitchCount(-1)}>
-              <img src="/images/minus.svg" alt="-1" className="pitch-icon" />
+              <img src="/assets/minus.svg" alt="-1" className="pitch-icon" />
             </button>
             <button className="pitch-button" onClick={() => updatePitchCount(1)}>
-              <img src="/images/plus.svg" alt="+1" className="pitch-icon" />
+              <img src="/assets/plus.svg" alt="+1" className="pitch-icon" />
             </button>
           </div>
+
 
 
           <div className="action-buttons-row">
