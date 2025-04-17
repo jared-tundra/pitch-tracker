@@ -194,7 +194,7 @@
 
 .session-info p {
   margin: 10px 0;
-  font-size: 20px;
+  font-size: 22px;
   color: #333;
   font-weight: 600;
 }
@@ -202,36 +202,27 @@
 .pitch-buttons-row,
 .action-buttons-row {
   display: flex;
-  justify-content: space-around;
-  gap: 10px;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  justify-content: center;
+  gap: 80px;
+  margin-top: 60px;
+  margin-bottom: 60px;
 }
 
 .pitch-button {
-  background-size: cover;
+  background-size: contain;
+  background-position: center;
   background-repeat: no-repeat;
   border: none;
-  border-radius: 50%;
-  width: 70px;
-  height: 70px;
+  width: 270px;
+  height: 270px;
   font-size: 20px;
   font-weight: bold;
   text-align: center;
   line-height: 70px;
   cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  background-color: transparent;
+  box-shadow: none;
 }
-
-/* .pitch-button.add {
-  background-image: url('/assets/+1.png');
-  color: transparent;
-}
-
-.pitch-button.subtract {
-  background-image: url('/assets/-1.png');
-  color: transparent;
-} */
 
 .pitch-button:hover {
   transform: scale(1.05);
@@ -260,4 +251,10 @@
 
 .session-button:hover {
   opacity: 0.9;
+}
+
+.pitch-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
